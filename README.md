@@ -8,13 +8,13 @@ Este proyecto es un simulador de navegación espacial desarrollado en **Godot 4*
 
 Para no quedar varados en el vacío, el código aplica conceptos de astrodinámica con un toque de "maña" programadora:
 
-* **Propulsión a "Toquecitos":** Olvidate de acelerar como un loco. Usamos `apply_central_impulse()` en ráfagas cortas. Cada vez que apretás espacio, un contador de la NAZA llora.
-* **Inercia Estilo Asteroids:** Implementé un sistema de `linear_damp` manual para que la nave se deslice por el espacio pero se frene de a poco, dándote ese control clásico de arcade.
-* **Gravedad "Casi Gratis":** El secreto del éxito son los nodos `Area2D` configurados como campos gravitatorios puntuales. Es básicamente colgarse de un planeta para ganar velocidad sin gastar un gramo de combustible.
+* **Propulsión a "Toquecitos"** 
+* **Inercia Estilo Asteroids** 
+* **Gravedad "Casi Gratis"** 
 
 ## 🛠️ Stack Tecnológico (Lo que nos dejó comprar la Agencia)
 
-* **Engine:** Godot 4.x (porque las licencias de otros motores estaban fuera de presupuesto).
+* **Engine:** Godot 4.6 (porque las licencias de otros motores estaban fuera de presupuesto).
 * **Lenguaje:** GDScript (Python con esteroides espaciales).
 * **Física:** Vectores, rotaciones y mucha fe en que el `-transform.y` apunte para el lado correcto.
 
