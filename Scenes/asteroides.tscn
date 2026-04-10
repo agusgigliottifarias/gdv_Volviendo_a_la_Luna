@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://du7hsthbw3c3x"]
+
+[ext_resource type="Texture2D" uid="uid://cjucyyifnfmt3" path="res://Assets/asteroide.webp" id="1_12qrr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hnhhv"]
+radius = 28.071337
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ggxr"]
+radius = 49.09175
+
+[sub_resource type="SphereMesh" id="SphereMesh_12qrr"]
+
+[node name="Asteroides" type="StaticBody2D" unique_id=2081519833]
+scale = Vector2(4, 4)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1381105158]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_12qrr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=704930570]
+shape = SubResource("CircleShape2D_hnhhv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1309795973]
+scale = Vector2(3, 3)
+gravity_space_override = 3
+gravity_point = true
+gravity_point_unit_distance = 20.0
+gravity = 15000.0
+linear_damp_space_override = 3
+linear_damp = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1582244385]
+shape = SubResource("CircleShape2D_4ggxr")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D" unique_id=204651452]
+modulate = Color(0.24840015, 0.24840018, 0.24840015, 1)
+z_index = -2
+scale = Vector2(100, 100)
+mesh = SubResource("SphereMesh_12qrr")
