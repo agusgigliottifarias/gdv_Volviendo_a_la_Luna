@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://d3o4vjcot1q24"]
+
+[ext_resource type="Texture2D" uid="uid://dtqbm2mllmse0" path="res://Assets/Nave.png" id="1_g7h3v"]
+
+[sub_resource type="GDScript" id="GDScript_g7h3v"]
+script/source = "extends RigidBody2D
+
+# --- VARIABLES ---
+@export var velocidad_rotacion: float = 5.0
+@export var velocidad_maxima: float = 500.0
+@export var aceleracion: float = 600.0
+@export var friccion: float = 100.0
+
+var velocidad_actual: Vector2 = Vector2.ZERO
+
+func _ready():
+	gravity_scale = 0.0
+
+func _physics_process(delta: float):
+	var direccion_rotacion = 0
+	var direccion_aceleracion = Vector2.ZERO
+	
+	# 1. INPUTS
+	if Input.is_action_pressed(\"ui_left\"):
+		direccion_rotacion = -1
+	if Input.is_action_pressed(\"ui_right\"):
+		direccion_rotacion = 1
+		
+	# Usamos el espacio (ui_select) para acelerar
+	if Input.is_action_pressed(\"espacio\") or Input.is_action_pressed(\"ui_up\"):
+		direccion_aceleracion = Vector2(0, -1).rotated(rotation)
+	
+	# 2. ROTACIÓN
+	rotation += direccion_rotacion * velocidad_rotacion * delta
+	
+	# 3. ACELERACIÓN
+	velocidad_actual += direccion_aceleracion * aceleracion * delta
+	
+	# 4. LÍMITE DE VELOCIDAD
+	if velocidad_actual.length() > velocidad_maxima:
+		velocidad_actual = velocidad_actual.normalized() * velocidad_maxima
+	
+	# 5. FRICCIÓN (Solo si no estamos acelerando y nos movemos)
+	if direccion_aceleracion == Vector2.ZERO and velocidad_actual.length() > 2:
+		var vector_friccion = velocidad_actual.normalized() * friccion * delta
+		velocidad_actual -= vector_friccion
+	elif velocidad_actual.length() <= 2:
+		velocidad_actual = Vector2.ZERO
+		
+	# 6. MOVIMIENTO FINAL
+	# Usamos 'linear_velocity' en lugar de 'position' para que el RigidBody2D 
+	# sea consciente de su velocidad y la gravedad de los planetas funcione después.
+	linear_velocity = velocidad_actual
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g7h3v"]
+radius = 66.1211
+
+[node name="Nave" type="RigidBody2D" unique_id=280064949]
+position = Vector2(178, 109)
+rotation = 1.5707964
+gravity_scale = 0.0
+linear_damp = 0.6
+script = SubResource("GDScript_g7h3v")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=965627686]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g7h3v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1540191926]
+shape = SubResource("CircleShape2D_g7h3v")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1032210910]
+position = Vector2(0, -1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1149823817]
+position = Vector2(0, -1)
