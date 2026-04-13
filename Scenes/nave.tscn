@@ -2,19 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://dtqbm2mllmse0" path="res://Assets/Nave.png" id="1_g7h3v"]
 [ext_resource type="Script" uid="uid://daowj3afs8kjp" path="res://Scripts/nave.gd" id="1_pkxkw"]
+[ext_resource type="Texture2D" uid="uid://cgcw3c6lo4fpn" path="res://Assets/fuego.webp" id="3_8d7b3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7h3v"]
 radius = 66.1211
 
-[node name="Nave" type="RigidBody2D" unique_id=280064949]
-position = Vector2(178, 109)
-rotation = 1.5707964
-linear_damp = 0.6
+[node name="Nave" type="CharacterBody2D" unique_id=1111252149 node_paths=PackedStringArray("mi_etiqueta_de_velocidad")]
 script = ExtResource("1_pkxkw")
-metadata/_edit_group_ = true
+mi_etiqueta_de_velocidad = NodePath("CanvasLayer/Velocidad")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=965627686]
-rotation = 3.1415927
+rotation = -1.5707964
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_g7h3v")
 
@@ -22,10 +20,33 @@ texture = ExtResource("1_g7h3v")
 shape = SubResource("CircleShape2D_g7h3v")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1032210910]
-position = Vector2(0, -1)
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1149823817]
-position = Vector2(0, -1)
+position = Vector2(70, 0)
+width = 5.0
+default_color = Color(0.9471994, 0.9471994, 0.9471994, 0.7372549)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=585798791]
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=30914515]
+
+[node name="Velocidad" type="Label" parent="CanvasLayer" unique_id=957361682]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.999999
+offset_top = -67.0
+offset_right = 94.0
+offset_bottom = -44.0
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Velocidad: "
+
+[node name="fuego" type="Sprite2D" parent="." unique_id=196939774]
+visible = false
+position = Vector2(-102, -2)
+rotation = 1.5707964
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_8d7b3")

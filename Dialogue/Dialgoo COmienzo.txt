@@ -1,0 +1,31 @@
+🚀 GUION DE INICIO: PROYECTO SLINGSHOT (NAZA)
+ESCENA 1: La Ilusión (Texto en pantalla negra o video épico)
+(Música de orquesta triunfal, tipo película de superhéroes)
+
+LOCUTOR (Voz de tráiler): "En un mundo donde los Estados Unidos ya rodearon la Luna con el programa Artemis... la humanidad buscaba una nueva vanguardia. Alguien con la audacia de ir más allá. Alguien con... costos operativos extremadamente bajos."
+
+LOCUTOR: "La NASA ha seleccionado a la República Argentina para liderar la misión más ambiciosa de la historia: El Proyecto Slingshot."
+
+ESCENA 2: El Choque con la Realidad (Interior de la cabina)
+(Corte brusco a la cabina de la nave. La música épica se corta y se escucha un zumbido de un ventilador viejo y estática de radio. En el fuselaje se ve el logo de la NASA, pero un brazo robótico o un operario con un aerosol tacha la 'S' y pinta una 'Z' bien rústica).
+
+IA DE LA NAVE (Voz robótica pero con tono cansado): "Bienvenido a bordo, cadete. El sistema de branding ha sido actualizado con éxito. Ahora somos la NAZA: Nacional Agencia Zonal Aeroespacial. La 'S' de los yanquis nos cobraba regalías por segundo, y la 'Z' de 'Zonal' la pintamos con lo que sobró del mantenimiento de los semáforos."
+
+ESCENA 3: El Briefing Conspiranoico (Lógica de misión)
+(En el monitor de la nave aparece un dibujo de la Luna y un Sol con anteojos de sol tachado)
+
+IA DE LA NAVE: "Para su tranquilidad, hemos optimizado el plan de vuelo basándonos en los últimos avances de los hilos de Twitter y grupos de Facebook. A diferencia de Artemis, que fue de día y casi se queman, nosotros despegamos a las 3:00 AM para llegar a la Luna de noche."
+
+IA DE LA NAVE: "Es ciencia básica, cadete: si la Luna no brilla es porque el Sol está apagado por mantenimiento. Así ahorramos en refrigeración y evitamos que el fuselaje de chapa se nos doble por el calor. Si no ve la Luna en el radar, no se asuste: es que no pagamos el abono de iluminación y está en 'modo ahorro'."
+
+ESCENA 4: La Triste Realidad del Combustible
+(Aparece un medidor de combustible en rojo parpadeando: 1.5%)
+
+CONTROL (Voz por radio con ruido de fritura de fondo): "¡Nave, acá Control! Che, escuchame... tuvimos un temita con la licitación de la nafta y solo pudimos cargarle un chorrito como para que arranque. Pero no te hagas drama, que para eso sos informático."
+
+IA DE LA NAVE: "Exacto. Implementaremos el protocolo 'El Envión del Rata'. Usaremos la gravedad de los planetas para impulsarnos. Es como hacer surf, pero con cuerpos celestes de miles de toneladas y sin tabla."
+
+CONTROL: "Si ves que la nave vibra mucho al pasar cerca de un planeta, es normal. Es el acero inoxidable que está recuperando su forma original. ¡Suerte, fiera! Si ves a los yanquis, deciles que después les devolvemos la pinza que nos prestaron."
+
+ESCENA 5: Inicio del Juego
+IA DE LA NAVE: "Iniciando secuencia de Descenso Controlado... También conocido como 'caer al vacío rezando para que la física de Godot nos favorezca'. ¡El espacio es suyo, cadete!"

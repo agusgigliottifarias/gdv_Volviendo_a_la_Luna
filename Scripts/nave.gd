@@ -1,48 +1,75 @@
-extends RigidBody2D
+extends CharacterBody2D
 
-# --- VARIABLES (Asegurate que aparezcan en el Inspector) ---
-@export var velocidad_rotacion: float = 5.0
-@export var velocidad_maxima: float = 5500.0
-@export var aceleracion: float = 600.0
-@export var friccion: float = 100.0
+# --- Configuración de la NAZA ---
+@export_group("Motores")
+@export var potencia_empuje: float = 600.0 
+@export var velocidad_rotacion: float = 4.0
 
-func _ready():
-	# IMPORTANTE: Dejamos la gravedad en 1 para que el Area2D afecte a la nave
-	# Pero en el proyecto (Project Settings) la gravedad global debería ser 0
-	# o simplemente no afectará si no hay otras áreas.
-	gravity_scale = 1.0
-	# Bloqueamos la rotación física para que no gire como loca al chocar
-	lock_rotation = true 
+@export_group("Trayectoria")
+@export var puntos_prediccion: int = 250
+@export var precision_simulacion: float = 0.05
+@onready var linea_trayectoria = $Line2D
 
-func _physics_process(delta: float):
-	var direccion_rotacion = 0
-	var direccion_aceleracion = Vector2.ZERO
+# --- UI (Telemetría) ---
+# Usamos un nombre de variable bien raro para que no choque con nada
+@export var mi_etiqueta_de_velocidad: Label 
+@onready var fuego = get_node("fuego")
+
+
+func _physics_process(delta: float) -> void:
+	# 1. Movimiento
+	var input_giro = Input.get_axis("ui_left", "ui_right")
+	rotation += input_giro * velocidad_rotacion * delta
+
+	if Input.is_action_pressed("ui_select"):
+		velocity += Vector2.RIGHT.rotated(rotation) * potencia_empuje * delta
+		# 2. Encendemos el fuego
+		fuego.visible = true 
+	else:
+		# 3. APAGAMOS el fuego cuando soltás el espacio
+		fuego.visible = false
+	# 2. Gravedad
+	velocity += calcular_gravedad_en_punto(global_position) * delta
+	move_and_slide()
 	
-	# 1. INPUTS (Fijate que los nombres coincidan con tu Mapa de Entrada)
-	if Input.is_action_pressed("ui_left"):
-		direccion_rotacion = -1
-	if Input.is_action_pressed("ui_right"):
-		direccion_rotacion = 1
+	# 3. Actualizar Visuales
+	actualizar_linea_trayectoria()
+	actualizar_velocimetro_naza()
+
+func actualizar_velocimetro_naza() -> void:
+	# Verificamos que el cartel esté conectado
+	if mi_etiqueta_de_velocidad != null:
+		var v_actual = velocity.length()
+		var mensaje = "VEL: %d KM/H" % int(v_actual)
 		
-	# Cambié "espacio" por "ui_select" que es el default de Godot para Espacio
-	if Input.is_action_pressed("ui_select") or Input.is_action_pressed("ui_up"):
-		# Usamos -transform.y porque en Godot "arriba" es el eje Y negativo
-		direccion_aceleracion = -transform.y
-	
-	# 2. ROTACIÓN MANUAL
-	rotation += direccion_rotacion * velocidad_rotacion * delta
-	
-	# 3. MOVIMIENTO (Operamos directamente sobre la propiedad de RigidBody2D)
-	if direccion_aceleracion != Vector2.ZERO:
-		linear_velocity += direccion_aceleracion * aceleracion * delta
-	
-	# 4. LÍMITE DE VELOCIDAD
-	if linear_velocity.length() > velocidad_maxima:
-		linear_velocity = linear_velocity.normalized() * velocidad_maxima
-	
-	# 5. FRICCIÓN (Solo si no estamos acelerando)
-	if direccion_aceleracion == Vector2.ZERO and linear_velocity.length() > 5:
-		var vector_friccion = linear_velocity.normalized() * friccion * delta
-		linear_velocity -= vector_friccion
-	elif direccion_aceleracion == Vector2.ZERO and linear_velocity.length() <= 5:
-		linear_velocity = Vector2.ZERO
+		# --- EL TRUCO MAESTRO ---
+		# Usamos .set() que es una función "bruta" para forzar el valor
+		mi_etiqueta_de_velocidad.set("text", mensaje)
+		
+		# Cambiamos color según velocidad
+		if v_actual > 900: mi_etiqueta_de_velocidad.modulate = Color.RED
+		elif v_actual > 500: mi_etiqueta_de_velocidad.modulate = Color.ORANGE
+		else: mi_etiqueta_de_velocidad.modulate = Color.CYAN
+
+func calcular_gravedad_en_punto(pos: Vector2) -> Vector2:
+	var fuerza_total = Vector2.ZERO
+	var planetas = get_tree().get_nodes_in_group("planetas")
+	for p in planetas:
+		if not "fuerza_gravedad" in p: continue
+		var dir = p.global_position - pos
+		var dist = dir.length()
+		if dist < 60: continue
+		var intensidad = (p.fuerza_gravedad * 1200) / dist
+		fuerza_total += dir.normalized() * intensidad
+	return fuerza_total
+
+func actualizar_linea_trayectoria() -> void:
+	var puntos = []
+	var pos_s = global_position
+	var vel_s = velocity
+	for i in range(puntos_prediccion):
+		var g = calcular_gravedad_en_punto(pos_s)
+		vel_s += g * precision_simulacion
+		pos_s += vel_s * precision_simulacion
+		puntos.append(to_local(pos_s))
+	linea_trayectoria.points = puntos
