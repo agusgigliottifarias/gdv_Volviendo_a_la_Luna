@@ -9,6 +9,8 @@ radius = 66.1211
 
 [node name="Nave" type="CharacterBody2D" unique_id=1111252149 node_paths=PackedStringArray("mi_etiqueta_de_velocidad")]
 script = ExtResource("1_pkxkw")
+potencia_empuje = 1200.0
+puntos_prediccion = 800
 mi_etiqueta_de_velocidad = NodePath("CanvasLayer/Velocidad")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=965627686]

@@ -9,4 +9,7 @@
 position = Vector2(705, 414)
 
 [node name="Nave" parent="." unique_id=280064949 instance=ExtResource("2_qc4db")]
-position = Vector2(78, 86)
+position = Vector2(-560, -148)
+
+[node name="Planetas2" parent="." unique_id=33516123 instance=ExtResource("1_8od7v")]
+position = Vector2(-357, 911)

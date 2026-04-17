@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://gx27kr5kqh7d"]
+
+[ext_resource type="PackedScene" uid="uid://du7hsthbw3c3x" path="res://Scenes/planetas.tscn" id="1_w4nit"]
+[ext_resource type="Script" uid="uid://bkjn644kc0s1l" path="res://Scripts/Pivote_luna.gd" id="2_ae6wf"]
+[ext_resource type="PackedScene" uid="uid://d3o4vjcot1q24" path="res://Scenes/nave.tscn" id="2_r8h7n"]
+
+[node name="Universo" type="Node2D" unique_id=2009462360]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1196719956]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1131106199]
+
+[node name="Tierra" parent="." unique_id=2081519833 instance=ExtResource("1_w4nit")]
+fuerza_gravedad = 980.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=743540100]
+script = ExtResource("2_ae6wf")
+velocidad = 0.05
+
+[node name="Luna" parent="Sprite2D" unique_id=1752273248 instance=ExtResource("1_w4nit")]
+position = Vector2(5382, 3476)
+fuerza_gravedad = 300.0
+prioridad = 1
+
+[node name="Nave" parent="." unique_id=1111252149 instance=ExtResource("2_r8h7n")]
+potencia_empuje = 1500.0
