@@ -46,6 +46,31 @@ size_flags_vertical = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Velocidad: "
 
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1574893880]
+offset_left = 852.0
+offset_top = 616.0
+offset_right = 1131.0
+offset_bottom = 643.0
+value = 100.0
+
+[node name="Combustible" type="Label" parent="CanvasLayer" unique_id=59279819]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -294.0
+offset_top = -90.0
+offset_right = -187.0
+offset_bottom = -67.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Combustible: "
+
 [node name="fuego" type="Sprite2D" parent="." unique_id=196939774]
 visible = false
 position = Vector2(-102, -2)
