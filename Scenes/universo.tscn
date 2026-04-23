@@ -11,7 +11,7 @@
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1131106199]
 
 [node name="Tierra" parent="." unique_id=2081519833 instance=ExtResource("1_w4nit")]
-scale = Vector2(40, 40)
+scale = Vector2(400, 400)
 fuerza_gravedad = 980.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=743540100]
@@ -19,13 +19,13 @@ script = ExtResource("2_ae6wf")
 velocidad = 0.05
 
 [node name="Luna" parent="Sprite2D" unique_id=1752273248 instance=ExtResource("1_w4nit")]
-position = Vector2(15299.002, 10661.001)
-scale = Vector2(11, 11)
+position = Vector2(135491, 111269)
+scale = Vector2(108, 108)
 fuerza_gravedad = 300.0
 prioridad = 1
 
 [node name="Nave" parent="." unique_id=1111252149 instance=ExtResource("2_r8h7n")]
-position = Vector2(569, 318)
+position = Vector2(12978, -860)
 potencia_empuje = 1500.0
 precision_simulacion = 0.1
 consumo_por_segundo = 1.0

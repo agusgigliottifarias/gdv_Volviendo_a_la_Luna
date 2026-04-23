@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://d3o4vjcot1q24"]
 
-[ext_resource type="Texture2D" uid="uid://dtqbm2mllmse0" path="res://Assets/Nave.png" id="1_g7h3v"]
 [ext_resource type="Script" uid="uid://daowj3afs8kjp" path="res://Scripts/nave.gd" id="1_pkxkw"]
+[ext_resource type="Texture2D" uid="uid://dq35w5503u3vk" path="res://Assets/Nave NAZA.png" id="2_8d7b3"]
 [ext_resource type="Texture2D" uid="uid://cgcw3c6lo4fpn" path="res://Assets/fuego.webp" id="3_8d7b3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g7h3v"]
-radius = 66.1211
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1inpp"]
+size = Vector2(126, 48)
 
 [node name="Nave" type="CharacterBody2D" unique_id=1111252149 node_paths=PackedStringArray("mi_etiqueta_de_velocidad")]
 script = ExtResource("1_pkxkw")
@@ -14,15 +14,16 @@ puntos_prediccion = 800
 mi_etiqueta_de_velocidad = NodePath("CanvasLayer/Velocidad")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=965627686]
-rotation = -1.5707964
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_g7h3v")
+texture = ExtResource("2_8d7b3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1540191926]
-shape = SubResource("CircleShape2D_g7h3v")
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_1inpp")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1032210910]
 position = Vector2(70, 0)
+points = PackedVector2Array(4, -1)
 width = 5.0
 default_color = Color(0.9471994, 0.9471994, 0.9471994, 0.7372549)
 
@@ -47,22 +48,22 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Velocidad: "
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1574893880]
-offset_left = 852.0
-offset_top = 616.0
-offset_right = 1131.0
-offset_bottom = 643.0
+offset_left = 853.0
+offset_top = 596.0
+offset_right = 1132.0
+offset_bottom = 623.0
 value = 100.0
 
 [node name="Combustible" type="Label" parent="CanvasLayer" unique_id=59279819]
-anchors_preset = -1
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -294.0
-offset_top = -90.0
-offset_right = -187.0
-offset_bottom = -67.0
+offset_left = -290.0
+offset_top = -116.0
+offset_right = -183.0
+offset_bottom = -93.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(2.5, 2.5)
@@ -73,7 +74,7 @@ text = "Combustible: "
 
 [node name="fuego" type="Sprite2D" parent="." unique_id=196939774]
 visible = false
-position = Vector2(-102, -2)
-rotation = 1.5707964
+position = Vector2(86, -4)
+rotation = -1.5707964
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_8d7b3")

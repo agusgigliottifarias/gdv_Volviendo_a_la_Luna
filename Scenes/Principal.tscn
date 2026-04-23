@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b8fjq8rqr83p2"]
+
+[ext_resource type="Script" uid="uid://dild8xolarlj4" path="res://Scripts/principal.gd" id="1_y3usm"]
+[ext_resource type="Texture2D" uid="uid://cx4ku73o1dke7" path="res://Assets/Pantalla Principal.png" id="2_ueq87"]
+[ext_resource type="Texture2D" uid="uid://nmd0yayacj4m" path="res://Assets/Logo NAZA.png" id="3_q2en1"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1206213372]
+script = ExtResource("1_y3usm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=679674069]
+position = Vector2(577.49994, 323)
+scale = Vector2(0.41847822, 0.42952123)
+texture = ExtResource("2_ueq87")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=953574561]
+position = Vector2(1079, 577)
+scale = Vector2(0.3779173, 0.3779133)
+texture = ExtResource("3_q2en1")
+
+[node name="Iniciar" type="MenuButton" parent="." unique_id=721487920]
+anchors_preset = -1
+anchor_left = 0.15900001
+anchor_top = 0.296
+anchor_right = 0.15900001
+anchor_bottom = 0.296
+offset_left = -116.16802
+offset_top = -19.808014
+offset_right = -69.76802
+offset_bottom = -11.808014
+scale = Vector2(5, 5)
+
+[node name="Configuracion" type="MenuButton" parent="." unique_id=1955146048]
+anchors_preset = -1
+anchor_left = 0.16600001
+anchor_top = 0.36900002
+anchor_right = 0.16600001
+anchor_bottom = 0.36900002
+offset_left = -116.23201
+offset_top = -15.1119995
+offset_right = -69.83201
+offset_bottom = -7.1119995
+scale = Vector2(5, 5)
+
+[node name="Ruta Vuelo" type="MenuButton" parent="." unique_id=923989293]
+anchors_preset = -1
+anchor_left = 0.16900001
+anchor_top = 0.46100003
+anchor_right = 0.16900001
+anchor_bottom = 0.46100003
+offset_left = -115.68802
+offset_top = -19.728027
+offset_right = -69.28802
+offset_bottom = -11.728027
+scale = Vector2(5, 5)
+
+[node name="Creditos" type="MenuButton" parent="." unique_id=1434550929]
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.53900003
+anchor_right = 0.125
+anchor_bottom = 0.53900003
+offset_left = -74.0
+offset_top = -20.272034
+offset_right = -44.600006
+offset_bottom = -12.272034
+scale = Vector2(5, 5)
+
+[node name="Salir" type="MenuButton" parent="." unique_id=582481880]
+anchors_preset = -1
+anchor_left = 0.098000005
+anchor_top = 0.619
+anchor_right = 0.098000005
+anchor_bottom = 0.619
+offset_left = -45.896004
+offset_top = -20.112
+offset_right = -27.49601
+offset_bottom = -12.1119995
+scale = Vector2(5, 5)
+
+[connection signal="pressed" from="Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Configuracion" to="." method="_on_configuracion_pressed"]
+[connection signal="pressed" from="Ruta Vuelo" to="." method="_on_ruta_vuelo_pressed"]
+[connection signal="pressed" from="Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

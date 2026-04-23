@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://js4pfwcx13m1"]
+
+[ext_resource type="Texture2D" uid="uid://b8mluw33a653" path="res://Assets/Creditos.png" id="1_ykkye"]
+[ext_resource type="Texture2D" uid="uid://nmd0yayacj4m" path="res://Assets/Logo NAZA.png" id="2_ompal"]
+
+[node name="creditos" type="CanvasLayer" unique_id=1206213372]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=679674069]
+position = Vector2(575.5, 327.4362)
+scale = Vector2(0.41086647, 0.423745)
+texture = ExtResource("1_ykkye")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=953574561]
+position = Vector2(1079, 577)
+scale = Vector2(0.3779173, 0.3779133)
+texture = ExtResource("2_ompal")
+
+[node name="Volver" type="MenuButton" parent="." unique_id=721487920]
+anchors_preset = -1
+anchor_left = 0.71000004
+anchor_top = 0.65500003
+anchor_right = 0.71000004
+anchor_bottom = 0.65500003
+offset_left = -34.920044
+offset_top = -37.440033
+offset_right = -21.119995
+offset_bottom = -22.440033
+scale = Vector2(5, 5)
+
+[connection signal="pressed" from="Volver" to="." method="_on_iniciar_pressed"]

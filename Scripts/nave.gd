@@ -13,7 +13,7 @@ extends CharacterBody2D
 @export_group("Cámara y Mapa")
 @export var zoom_normal: Vector2 = Vector2(1, 1)
 @export var zoom_mapa: Vector2 = Vector2(0.15, 0.15) 
-@export var zoom_total: Vector2 = Vector2(0.04, 0.04)
+@export var zoom_total: Vector2 = Vector2(0.02, 0.02)
 @export var suavizado_zoom: float = 0.1
 
 @export_group("Combustible")
