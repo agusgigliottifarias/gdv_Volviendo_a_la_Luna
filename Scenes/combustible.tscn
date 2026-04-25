@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://clr3x2xd3jotg"]
+
+[ext_resource type="Script" uid="uid://01qjpnuhsx3n" path="res://Scripts/combustible.gd" id="1_7cma8"]
+[ext_resource type="Texture2D" uid="uid://c6vp2h3yv5j28" path="res://Assets/Combustible.png" id="1_buk3q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cma8"]
+radius = 143.0
+height = 286.0
+
+[node name="Area2D" type="Area2D" unique_id=1248906677]
+script = ExtResource("1_7cma8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1279348245]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_7cma8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1907150103]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_buk3q")
