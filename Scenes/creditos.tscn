@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://js4pfwcx13m1"]
 
+[ext_resource type="Script" uid="uid://dn0u6f7u2w1pe" path="res://Scripts/creditos.gd" id="1_ompal"]
 [ext_resource type="Texture2D" uid="uid://b8mluw33a653" path="res://Assets/Creditos.png" id="1_ykkye"]
 [ext_resource type="Texture2D" uid="uid://nmd0yayacj4m" path="res://Assets/Logo NAZA.png" id="2_ompal"]
 
 [node name="creditos" type="CanvasLayer" unique_id=1206213372]
+script = ExtResource("1_ompal")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=679674069]
 position = Vector2(575.5, 327.4362)
@@ -27,4 +29,11 @@ offset_right = -21.119995
 offset_bottom = -22.440033
 scale = Vector2(5, 5)
 
-[connection signal="pressed" from="Volver" to="." method="_on_iniciar_pressed"]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1618845037]
+offset_left = 1057.0
+offset_top = 240.0
+offset_right = 1097.0
+offset_bottom = 280.0
+color = Color(0.017732391, 0.017732391, 0.01773239, 1)
+
+[connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]

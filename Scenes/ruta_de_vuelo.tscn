@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bmr7gm0io0pdb"]
 
+[ext_resource type="Script" uid="uid://dvq2cqrsx7jys" path="res://Scripts/ruta_vuelo.gd" id="1_follr"]
 [ext_resource type="Texture2D" uid="uid://snduu83osbhh" path="res://Assets/Ruta_Vueelo.png" id="1_p267q"]
 [ext_resource type="Texture2D" uid="uid://nmd0yayacj4m" path="res://Assets/Logo NAZA.png" id="2_follr"]
 
 [node name="Ruta_de_vuelo" type="CanvasLayer" unique_id=1206213372]
+script = ExtResource("1_follr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=679674069]
 position = Vector2(575.5, 327.4362)
@@ -27,4 +29,11 @@ offset_right = -81.19998
 offset_bottom = -25.376038
 scale = Vector2(5, 5)
 
-[connection signal="pressed" from="Volver" to="." method="_on_iniciar_pressed"]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1792699738]
+offset_left = 1061.0
+offset_top = 243.0
+offset_right = 1101.0
+offset_bottom = 283.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]

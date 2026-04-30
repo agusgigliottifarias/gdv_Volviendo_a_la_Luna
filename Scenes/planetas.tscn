@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du7hsthbw3c3x"]
 
-[ext_resource type="Texture2D" uid="uid://cjucyyifnfmt3" path="res://Assets/asteroide.webp" id="1_12qrr"]
 [ext_resource type="Script" uid="uid://b2carqix6e1da" path="res://Scripts/planetas.gd" id="1_hnhhv"]
+[ext_resource type="Texture2D" uid="uid://dhjc1iyeade26" path="res://Assets/tierra.png" id="2_tkexs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hnhhv"]
 radius = 28.071337
@@ -17,8 +17,8 @@ script = ExtResource("1_hnhhv")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1381105158]
-scale = Vector2(0.06, 0.06)
-texture = ExtResource("1_12qrr")
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("2_tkexs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=704930570]
 shape = SubResource("CircleShape2D_hnhhv")
@@ -36,5 +36,6 @@ shape = SubResource("CircleShape2D_4ggxr")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D" unique_id=204651452]
 modulate = Color(0.24840015, 0.24840018, 0.24840015, 1)
 z_index = -2
+position = Vector2(-0.5833334, -0.5833334)
 scale = Vector2(100, 100)
 mesh = SubResource("SphereMesh_12qrr")

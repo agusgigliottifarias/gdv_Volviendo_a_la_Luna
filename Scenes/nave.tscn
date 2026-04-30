@@ -1,17 +1,32 @@
 [gd_scene format=3 uid="uid://d3o4vjcot1q24"]
 
 [ext_resource type="Script" uid="uid://daowj3afs8kjp" path="res://Scripts/nave.gd" id="1_pkxkw"]
+[ext_resource type="Resource" uid="uid://pvx4sj360hl8" path="res://Dialogue/comienzo.dialogue" id="2_1inpp"]
 [ext_resource type="Texture2D" uid="uid://dq35w5503u3vk" path="res://Assets/Nave NAZA.png" id="2_8d7b3"]
 [ext_resource type="Texture2D" uid="uid://cgcw3c6lo4fpn" path="res://Assets/fuego.webp" id="3_8d7b3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1inpp"]
 size = Vector2(126, 48)
 
-[node name="Nave" type="CharacterBody2D" unique_id=1111252149 node_paths=PackedStringArray("mi_etiqueta_de_velocidad")]
+[sub_resource type="Gradient" id="Gradient_1inpp"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.032467533, 0.9935065)
+colors = PackedColorArray(0.14901961, 1, 0.6117647, 1, 0, 0, 0, 1)
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_via8w"]
+gradient = SubResource("Gradient_1inpp")
+width = 32
+use_hdr = true
+
+[node name="Nave" type="CharacterBody2D" unique_id=1111252149 node_paths=PackedStringArray("mi_etiqueta_de_velocidad", "barra_combustible")]
 script = ExtResource("1_pkxkw")
-potencia_empuje = 1200.0
 puntos_prediccion = 800
+precision_simulacion = 0.1
+recurso_dialogo = ExtResource("2_1inpp")
 mi_etiqueta_de_velocidad = NodePath("CanvasLayer/Velocidad")
+barra_combustible = NodePath("CanvasLayer/ProgressBar")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=965627686]
 scale = Vector2(0.2, 0.2)
@@ -22,13 +37,13 @@ position = Vector2(-5, -1)
 shape = SubResource("RectangleShape2D_1inpp")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1032210910]
-position = Vector2(70, 0)
-points = PackedVector2Array(4, -1)
+position = Vector2(-70, 0)
 width = 5.0
 default_color = Color(0.9471994, 0.9471994, 0.9471994, 0.7372549)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=585798791]
 position_smoothing_enabled = true
+position_smoothing_speed = 20.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=30914515]
 
@@ -72,9 +87,19 @@ size_flags_vertical = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Combustible: "
 
+[node name="LabelMapa" type="Label" parent="CanvasLayer" unique_id=516039009]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "\"NAZA-MAP v1.0 - LICENCIA VENCIDA. REGISTRE EL SOFTWARE EN EL KIOSCO DE LA ESQUINA.\""
+
 [node name="fuego" type="Sprite2D" parent="." unique_id=196939774]
 visible = false
 position = Vector2(86, -4)
 rotation = -1.5707964
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_8d7b3")
+
+[node name="ReproductorMusica" type="AudioStreamPlayer" parent="." unique_id=92527369]
+
+[node name="Line2D_GPS" type="Line2D" parent="." unique_id=174428824]
+texture = SubResource("GradientTexture1D_via8w")

@@ -7,7 +7,7 @@
 radius = 143.0
 height = 286.0
 
-[node name="Area2D" type="Area2D" unique_id=1248906677]
+[node name="Combustible" type="Area2D" unique_id=1248906677]
 script = ExtResource("1_7cma8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1279348245]

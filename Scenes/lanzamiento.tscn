@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bhokq0rte8lo3"]
+
+[ext_resource type="Script" uid="uid://bkahpdgcp8wb5" path="res://Scripts/lanzamiento.gd" id="1_jqck8"]
+[ext_resource type="Texture2D" uid="uid://b51vf6egn03ek" path="res://Assets/Plataforma de lazamiento.png" id="1_v8ibc"]
+[ext_resource type="Resource" uid="uid://pvx4sj360hl8" path="res://Dialogue/comienzo.dialogue" id="2_hyiyt"]
+[ext_resource type="Texture2D" uid="uid://dq35w5503u3vk" path="res://Assets/Nave NAZA.png" id="2_x63gr"]
+[ext_resource type="Texture2D" uid="uid://broq82trikibf" path="res://Assets/Obelicos_base.png" id="2_xx2uo"]
+[ext_resource type="Texture2D" uid="uid://cgcw3c6lo4fpn" path="res://Assets/fuego.webp" id="3_jqck8"]
+[ext_resource type="Texture2D" uid="uid://c835o8uychken" path="res://Assets/obelicso_Derecha.png" id="3_x63gr"]
+[ext_resource type="Texture2D" uid="uid://dm3t1qdq5s813" path="res://Assets/obelisco_izquierda.png" id="4_jqck8"]
+[ext_resource type="AudioStream" uid="uid://bsftqxrkfv0h4" path="res://Music/Conteo.mp3" id="8_f1hd0"]
+
+[node name="Lanzamiento" type="Node2D" unique_id=386043264]
+script = ExtResource("1_jqck8")
+recurso_dialogo = ExtResource("2_hyiyt")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=22123951]
+position = Vector2(609.50006, 320.49997)
+scale = Vector2(0.44440407, 0.42382807)
+texture = ExtResource("1_v8ibc")
+
+[node name="Obelisco2" type="Node" parent="." unique_id=291965543]
+
+[node name="Base" type="Sprite2D" parent="Obelisco2" unique_id=1257474066]
+position = Vector2(624, 385)
+texture = ExtResource("2_xx2uo")
+
+[node name="Derecha" type="Sprite2D" parent="Obelisco2" unique_id=2020886560]
+position = Vector2(629, 144)
+texture = ExtResource("3_x63gr")
+
+[node name="Izquierda" type="Sprite2D" parent="Obelisco2" unique_id=1358483491]
+position = Vector2(599, 144)
+texture = ExtResource("4_jqck8")
+
+[node name="Cielo" type="Node" parent="." unique_id=393813609]
+
+[node name="ColorRect" type="ColorRect" parent="Cielo" unique_id=887599869]
+z_index = -2
+offset_left = 2.0
+offset_top = -1493.0
+offset_right = 1241.0
+offset_bottom = -4.0
+color = Color(0.20147625, 0.254448, 0.31119892, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Cielo" unique_id=493540210]
+z_index = -2
+offset_left = -1.0
+offset_top = -3071.0
+offset_right = 1238.0
+offset_bottom = -1447.0
+color = Color(0.16031533, 0.20720324, 0.25407612, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Cielo" unique_id=1178607789]
+z_index = -2
+offset_left = -14.0
+offset_top = -4859.0
+offset_right = 1225.0
+offset_bottom = -3062.0
+color = Color(0.10567141, 0.14110008, 0.17651778, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Cielo" unique_id=1373312432]
+z_index = -2
+offset_left = -9.0
+offset_top = -6738.0
+offset_right = 1230.0
+offset_bottom = -4782.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1620087891]
+stream = ExtResource("8_f1hd0")
+
+[node name="Nave" type="Node2D" parent="." unique_id=1684648218]
+
+[node name="Cuerpo" type="Sprite2D" parent="Nave" unique_id=953612417]
+position = Vector2(615, 393.00003)
+rotation = 1.5707964
+scale = Vector2(0.3531772, 0.32187527)
+texture = ExtResource("2_x63gr")
+
+[node name="Fuego" type="Sprite2D" parent="Nave" unique_id=259433016]
+position = Vector2(617, 519)
+scale = Vector2(0.26940647, 0.22285715)
+texture = ExtResource("3_jqck8")
+
+[node name="Camera2D" type="Camera2D" parent="Nave" unique_id=595231723]
+position = Vector2(575, 327)

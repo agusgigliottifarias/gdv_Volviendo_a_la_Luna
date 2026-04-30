@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cmj2bur0g3ikw"]
+
+[ext_resource type="Script" uid="uid://dvq2cqrsx7jys" path="res://Scripts/ruta_vuelo.gd" id="1_wrvog"]
+[ext_resource type="Texture2D" uid="uid://gqg4mp0f50uq" path="res://Assets/configuracion.png" id="2_b3eiw"]
+[ext_resource type="Texture2D" uid="uid://nmd0yayacj4m" path="res://Assets/Logo NAZA.png" id="3_jqpt0"]
+
+[node name="Configuracion" type="CanvasLayer" unique_id=1206213372]
+script = ExtResource("1_wrvog")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=679674069]
+position = Vector2(575.5, 327.4362)
+scale = Vector2(0.41086647, 0.423745)
+texture = ExtResource("2_b3eiw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=953574561]
+position = Vector2(1079, 577)
+scale = Vector2(0.3779173, 0.3779133)
+texture = ExtResource("3_jqpt0")
+
+[node name="Volver" type="MenuButton" parent="." unique_id=721487920]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.81600004
+anchor_right = 0.5
+anchor_bottom = 0.81600004
+offset_left = -36.0
+offset_top = -51.768005
+offset_right = -20.400024
+offset_bottom = -34.567993
+scale = Vector2(5, 5)
+
+[connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]

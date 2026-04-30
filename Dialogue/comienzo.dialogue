@@ -1,0 +1,58 @@
+
+~ intro_obelisco
+
+IA de la Nave: [shake rate=15 level=4]¡Atención cadete! Iniciando protocolo "Silo Porteño".[/shake]
+IA de la Nave: Si escucha un crujido metálico, es el mármol de 1936 pidiendo por favor que lo jubilen.
+IA de la Nave: Las alas laterales están rotando. [wait=0.5] Le pusimos un poco de grasa de pella de una parrilla de la costanera para que no se traben las bisagras.
+Control: ¡Acá Control! [wait=0.5] Che, fíjense que no haya quedado ningún trapito colgado de la punta, que después nos quieren cobrar el estacionamiento en la estratósfera.
+IA de la Nave: Descuide Control, los sensores solo detectan restos de choripán y un par de volantes de una pizzería de la zona. 
+IA de la Nave: [wave amp=25 freq=2]Todo listo para que la República Argentina llegue a las estrellas...[/wave] o por lo menos para que crucemos la General Paz sin que se nos pare el motor.
+IA de la Nave: [b]Presione [color=yellow][ESPACIO][/color][/b] para encender el "quemador de asado" y salir de acá antes de que venga la grúa.
+
+=> END
+
+~ atmosfera
+
+IA de la Nave: Atravesando la Tropósfera... [wait=0.5] Los edificios ya parecen de juguete.
+IA de la Nave: Entrando en la Estratósfera. [wait=0.5] ¡Mirá cadete, se ve la curvatura! [wait=0.3] O capaz es el vidrio del casco que está medio rayado.
+IA de la Nave: Cruzando la Mesósfera y la Termósfera. [wait=0.5] La chapa está empezando a crujir, pero es normal, es el acero argentino acomodándose al vacío.
+IA de la Nave: [wave amp=30 freq=3]¡Llegamos al espacio, fiera! Bienvenidos a la última frontera.[/wave]
+
+=> END
+~ start
+
+# ESCENA 1: Locutor con efecto de onda suave
+Locutor: [wave amp=25 freq=2]En un mundo donde los Estados Unidos ya rodearon la Luna...[/wave]
+Locutor: Alguien con la audacia de ir más allá. [wait=0.5]Alguien con... [speed=0.5]costos operativos extremadamente bajos.[/speed]
+Locutor: La NASA ha seleccionado a la [rainbow]República Argentina[/rainbow] para el Proyecto Slingshot.
+
+# ESCENA 2: IA con texto que tiembla un poco (inestabilidad)
+IA de la Nave: [shake rate=15 level=5]Bienvenido a bordo, cadete.[/shake] El sistema de branding ha sido actualizado.
+IA de la Nave: Ahora somos la [color=cyan]NAZA[/color]: Nacional Agencia Zonal Aeroespacial.
+IA de la Nave: La 'S' nos cobraba regalías... [wait=0.8]la [b]'Z'[/b] la pintamos con lo que sobró de los semáforos.
+
+# ESCENA 3: Briefing
+IA de la Nave: Despegamos a las [wave amp=20 freq=3]3:00 AM[/wave] para llegar a la Luna de noche.
+IA de la Nave: Es ciencia básica: si la Luna no brilla es porque el Sol está apagado por [pulse freq=2 color=yellow]mantenimiento[/pulse].
+
+# ESCENA 4: Control con interferencia (shake fuerte)
+Control: [shake rate=30 level=10]¡Nave, acá Control![/shake] Tuvimos un temita con la licitación de la nafta...
+Control: Pero no te hagas drama, [wait=0.5]que para eso sos cadete.
+IA de la Nave: Implementaremos el protocolo [b]"El Envión del Rata"[/b].
+Control: Si la nave vibra, es el acero inoxidable recuperando su forma. [wait=0.5][shake rate=20 level=5]¡Suerte, fiera![/shake]
+
+# ESCENA 5: Inicio
+IA de la Nave: Iniciando secuencia de [speed=0.3]Descenso Controlado...[/speed] [wait=1.0]
+IA de la Nave: [wave amp=50 freq=5]¡El espacio es suyo, cadete![/wave]
+
+=> END
+
+~ radio_start
+g
+IA de la Nave: [wave amp=30 freq=3]¡Fua fiera! Encontraste la radio robada...[/wave] [wait=0.8] ¡Digo! [wait=0.5] Comprada legalmente a un Renault Clio gris que estaba estacionado ahí afuera.
+IA de la Nave: Te explico cómo se usa este "estéreo de alta gama": 
+IA de la Nave: Con la [b]P[/b] la prendés o la apagás. Y si querés cambiar el track, dale a la [b]I[/b] o a la [b]O[/b].
+IA de la Nave: [shake rate=20 level=8]¡Epa! Bueno, nos vamos que vino la cana a hacernos unas preguntas por esa radio...[/shake] 
+IA de la Nave: [speed=0.5]Cuidate cadete, cualquier cosa decí que la encontraste tirada...[/speed]
+
+=> END
